@@ -10,7 +10,6 @@ export default function Todo({ todo }) {
   const [isEditing, setIsEditing] = useState(false);
   const [completed, setCompleted] = useState(todo.completed);
   const [title, setTitle] = useState(todo.title);
-  const [time, setTime] = useState(todo.created_at);
   const [updatedTime, setUpdatedTime] = useState(todo.updated_at);
 
   const updateTodoMutation = useMutation({
@@ -19,7 +18,6 @@ export default function Todo({ todo }) {
         id: todo.id,
         title,
         completed,
-        created_at: time,
         updated_at: updatedTime,
       }),
     onSuccess: () => {
